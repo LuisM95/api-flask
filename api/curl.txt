@@ -1,0 +1,25 @@
+curl -i -H "Content-type: application/json" -X POST -d "{\"title\":\"Nueva Tarea\",\"description\":\"Nueva Descripcion\",\"deadline\":\"2020-09-09 12:00:00\"}" http://127.0.0.1:5000/api/v1/tasks
+
+curl -i -H "Content-type: application/json" -X POST -d "{\"title\":\"Cambio Completo de Titulo\",\"description\":\"Nueva Descripcion\",\"deadline\":\"123\"}" http://127.0.0.1:5000/api/v1/tasks
+
+peticiones mediante curl
+#Obtener listado de tareas
+curl -i -H "Content-type: application/json" http://127.0.0.1:5000/api/v1/task
+
+#ordenamiento
+curl -i -H "Content-type: application/json" http://127.0.0.1:5000/api/v1/tasks?order=asc
+
+#paginacion 
+curl -i -H "Content-type: application/json" http://127.0.0.1:5000/api/v1/tasks?order=asc&page=1
+
+#Obtener tarea cuyo id es 1.
+curl -i -H "Content-type: application/json" http://127.0.0.1:5000/api/v1/tasks/1
+
+#crear nueva tarea
+curl -i -H "Content-type: application/json" -X POST -d "{\"title\":\"Nueva Tarea\",\"description\":\"Nueva Descripcion\",\"deadline\":\"2020-09-09 12:00:00\"}" http://127.0.0.1:5000/api/v1/tasks
+
+#actuaizar archivo 
+curl -i -H "Content-type: application/json" -X PUT -d "{\"title\":\"Cambio Completo de Titulo\",\"description\":\"Nueva Descripcion\",\"deadline\":\"123\"}" http://127.0.0.1:5000/api/v1/tasks
+
+#Eliminar tarea
+curl -i -H "Content-type: application/json" -X DELETE http://127.0.0.1:5000/api/v1/tasks/1
